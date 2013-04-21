@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source sh.inc
+source inc
 
 for name in ${NAMES[@]}; do
     echo Stopping $name
-    lxc-stop -n $name
+    sudo lxc-stop -n $name
 done

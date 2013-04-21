@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source sh.inc
+source inc
 
 for name in ${NAMES[@]}; do
-    lxc-destroy -n $name
+    sudo lxc-destroy -n $name
 done
