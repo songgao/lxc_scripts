@@ -2,7 +2,7 @@
 
 trap 'echo interrupted; exit' INT
 
-source inc
+source $(cd $(dirname $0) && pwd)/inc
 
 for i in $INDEX; do
     echo

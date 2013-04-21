@@ -2,7 +2,7 @@
 
 trap 'echo interrupted; exit' INT
 
-. inc
+source $(cd $(dirname $0) && pwd)/inc
 
 if [ $(lxc-ls | grep "^"$VANILLA"$") ]
 then
