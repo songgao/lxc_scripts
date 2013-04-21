@@ -4,6 +4,12 @@ trap 'echo interrupted; exit' INT
 
 source $(cd $(dirname $0) && pwd)/inc
 
+if [ -z "$VANILLA" ] || [ -z "$VANILLA_INIT" ]
+then
+    echo "Please export environmental variables first; check settings.inc.example for details"
+    exit
+fi
+
 if [ $(lxc-ls | grep "^"$VANILLA"$") ]
 then
     read -p "$VANILLA exists. Would you like to destroy it and create a new one (y/n)? "
@@ -16,7 +22,6 @@ then
 fi
 
 sudo lxc-create -t ubuntu -n $VANILLA
-VANILLA_IP="10.0.3.100"
 
 sudo sed -i 's/iface eth0 inet dhcp//g' /var/lib/lxc/$VANILLA/rootfs/etc/network/interfaces
 echo "iface eth0 inet static

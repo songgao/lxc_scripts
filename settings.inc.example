@@ -1,7 +1,12 @@
 # export these variables before calling scripts
 
+# required for all scripts
 export NUM_START=1
 export NUM_END=49
 export NAME_PREFIX='squirrel-'
+
+#required for create.sh and clone.sh
 export VANILLA='squirrel-vanilla'
+
+#required for create.sh
 export VANILLA_INIT='/tmp/init.sh'
