@@ -1,3 +1,5 @@
+# export these variables before calling scripts
+
 export NUM_START=1
 export NUM_END=49
 export NAME_PREFIX='squirrel-'

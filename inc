@@ -1,4 +1,4 @@
-source settings.inc
+# Make sure variables in settings.inc.example are already exported
 
 export NUMBERS=($(seq -w $NUM_START $NUM_END))
 export NAMES=( "${NUMBERS[@]/#/$NAME_PREFIX}" )
